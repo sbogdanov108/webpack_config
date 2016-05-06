@@ -44,7 +44,7 @@ const config = {
     // имя сохраняемого файла с шаблонизацией имени в скобках
     filename: '[name]-[hash]-bundle.js',
     // откуда будет загружать бандл webpack-server
-    publicPath: 'build/'
+    // publicPath: '/build/'
   },
   devtool: 'source-map',
   module: {
@@ -91,6 +91,10 @@ const config = {
     use: [ Autoprefixer({
       browser: [ 'last 2 versions' ] // настраиваем автопрефиксер
     })]
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase       : './'
   },
   plugins: plugins
 };
